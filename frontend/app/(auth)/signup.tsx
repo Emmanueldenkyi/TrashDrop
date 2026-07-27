@@ -5,6 +5,7 @@ import { COLORS, SIZES } from '../../src/constants/theme';
 import { Button } from '../../src/components/Button';
 import { Input } from '../../src/components/Input';
 import { supabase } from '../../src/utils/supabase';
+import { makeRedirectUri } from 'expo-auth-session';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -27,6 +28,7 @@ export default function SignUp() {
       email: formData.email,
       password: formData.password,
       options: {
+        emailRedirectTo: makeRedirectUri(),
         data: {
           full_name: formData.fullName,
           phone: formData.phone,
