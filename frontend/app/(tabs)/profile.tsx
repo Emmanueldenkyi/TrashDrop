@@ -1,8 +1,12 @@
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { router } from 'expo-router';
 import { COLORS, SIZES } from '../../src/constants/theme';
+import { useAuth } from '../../src/contexts/AuthContext';
+import { supabase } from '../../src/utils/supabase';
 
 export default function Profile() {
+  const { user } = useAuth();
+
   const profileOptions = [
     { id: 'edit', title: 'Edit Profile', icon: '👤', route: '/edit-profile' },
     { id: 'addresses', title: 'Addresses', icon: '📍', route: null },
@@ -12,20 +16,23 @@ export default function Profile() {
     { id: 'help', title: 'Help Center', icon: '❓', route: '/(tabs)/support' },
   ];
 
-  const handleLogout = () => {
-    // TODO: Implement Supabase Logout
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
     router.replace('/(auth)/login');
   };
+
+  const displayName = user?.user_metadata?.full_name || 'User';
+  const initial = displayName.charAt(0).toUpperCase();
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>
           <View style={styles.avatarContainer}>
-            <Text style={styles.avatarText}>K</Text>
+            <Text style={styles.avatarText}>{initial}</Text>
           </View>
-          <Text style={styles.name}>Kelvin User</Text>
-          <Text style={styles.email}>kelvin@example.com</Text>
+          <Text style={styles.name}>{displayName}</Text>
+          <Text style={styles.email}>{user?.email || 'No email'}</Text>
         </View>
 
         <View style={styles.optionsContainer}>

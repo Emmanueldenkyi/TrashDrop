@@ -61,8 +61,27 @@ export default function Login() {
           <Button 
             title="Login" 
             onPress={handleLogin} 
+            isLoading={isLoading}
             style={styles.loginButton}
           />
+
+          <View style={styles.demoContainer}>
+            <Text style={styles.demoText}>For Testing Purposes (Create these in Supabase):</Text>
+            <View style={styles.demoButtonsRow}>
+              <TouchableOpacity 
+                style={styles.demoButton} 
+                onPress={() => { setEmail('user@trashdrop.com'); setPassword('password123'); }}
+              >
+                <Text style={styles.demoButtonText}>Demo User</Text>
+              </TouchableOpacity>
+              <TouchableOpacity 
+                style={styles.demoButton} 
+                onPress={() => { setEmail('admin@trashdrop.com'); setPassword('admin123'); }}
+              >
+                <Text style={styles.demoButtonText}>Demo Admin</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
 
           <View style={styles.signupContainer}>
             <Text style={styles.signupText}>Don't have an account? </Text>
@@ -112,6 +131,39 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     marginTop: SIZES.m,
+  },
+  demoContainer: {
+    marginTop: SIZES.xl,
+    padding: SIZES.m,
+    backgroundColor: '#FFF3E0',
+    borderRadius: SIZES.s,
+    borderWidth: 1,
+    borderColor: '#FFB74D',
+  },
+  demoText: {
+    fontSize: 12,
+    color: '#E65100',
+    marginBottom: SIZES.s,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  demoButtonsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  demoButton: {
+    backgroundColor: '#FF9800',
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 4,
+    flex: 1,
+    marginHorizontal: 4,
+    alignItems: 'center',
+  },
+  demoButtonText: {
+    color: '#fff',
+    fontSize: 12,
+    fontWeight: '600',
   },
   signupContainer: {
     flexDirection: 'row',

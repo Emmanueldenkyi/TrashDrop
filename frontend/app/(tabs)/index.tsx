@@ -1,14 +1,20 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView, Platform } from 'react-native';
 import { router } from 'expo-router';
 import { COLORS, SIZES } from '../../src/constants/theme';
+import { useAuth } from '../../src/contexts/AuthContext';
 
 export default function Home() {
+  const { user } = useAuth();
+  
   const services = [
     { id: 'schedule', title: 'Schedule Pickup', icon: '🗑️', route: '/schedule' },
     { id: 'history', title: 'Pickup History', icon: '📋', route: '/history' },
     { id: 'notifications', title: 'Notifications', icon: '🔔', route: '/notifications' },
     { id: 'guide', title: 'Recycling Guide', icon: '♻️', route: '/guide' },
   ];
+
+  const displayName = user?.user_metadata?.full_name?.split(' ')[0] || 'User';
+  const initial = displayName.charAt(0).toUpperCase();
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -17,11 +23,11 @@ export default function Home() {
         {/* Header Section */}
         <View style={styles.header}>
           <View>
-            <Text style={styles.greeting}>Hello, Kelvin 👋</Text>
+            <Text style={styles.greeting}>Hello, {displayName} 👋</Text>
             <Text style={styles.subtitle}>Let's keep the environment clean!</Text>
           </View>
           <TouchableOpacity onPress={() => router.push('/(tabs)/profile')} style={styles.profileAvatar}>
-            <Text style={styles.avatarText}>K</Text>
+            <Text style={styles.avatarText}>{initial}</Text>
           </TouchableOpacity>
         </View>
 

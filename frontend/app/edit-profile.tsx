@@ -1,19 +1,34 @@
 import { View, Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, Platform, ScrollView, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { COLORS, SIZES } from '../src/constants/theme';
 import { Button } from '../src/components/Button';
 import { Input } from '../src/components/Input';
+import { useAuth } from '../src/contexts/AuthContext';
+import { supabase } from '../src/utils/supabase';
 
 export default function EditProfile() {
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
-    name: 'Kelvin User',
-    email: 'kelvin@example.com',
-    phone: '0540000000',
+    name: '',
+    email: '',
+    phone: '',
   });
 
-  const handleSave = () => {
-    // TODO: Update Supabase user profile
+  useEffect(() => {
+    if (user) {
+      setFormData({
+        name: user.user_metadata?.full_name || '',
+        email: user.email || '',
+        phone: user.user_metadata?.phone || '',
+      });
+    }
+  }, [user]);
+
+  const handleSave = async () => {
+    await supabase.auth.updateUser({
+      data: { full_name: formData.name, phone: formData.phone }
+    });
     router.back();
   };
 
