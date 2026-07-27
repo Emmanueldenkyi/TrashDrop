@@ -1,0 +1,356 @@
+TrashDrop Mobile Application
+UI/UX Design Documentation
+
+Project Name: TrashDrop – Smart Waste Collection Mobile Application
+
+Platform: Android (React Native)
+
+Design Tool: Figma
+
+Primary Color: Forest Green (#3E6B3A)
+
+Secondary Colors: White, Light Gray, Black
+
+Purpose:
+The TrashDrop mobile application allows users to schedule waste pickups, monitor collection status, make payments, receive notifications, and manage their profiles through a clean and user-friendly interface.
+
+1. Splash Screen
+Purpose
+
+The splash screen introduces the application while the app loads necessary resources.
+
+Features
+TrashDrop logo
+Green branding background
+Loading transition
+User Action
+Wait for the application to load.
+2. Welcome Screen
+Purpose
+
+Introduces the application to first-time users.
+
+Components
+App Logo
+Waste truck illustration
+Welcome message
+"Get Started" button
+User Action
+Tap Get Started to continue.
+3. Sign Up Screen
+Purpose
+
+Allows new users to create an account.
+
+Input Fields
+Full Name
+Email Address
+Phone Number
+Password
+Confirm Password
+Buttons
+Sign Up
+Login link
+Google Sign Up
+Apple Sign Up
+Validation
+Required fields
+Email validation
+Password confirmation
+4. Login Screen
+Purpose
+
+Allows registered users to access their accounts.
+
+Input Fields
+Email or Phone Number
+Password
+Features
+Show/Hide Password
+Forgot Password
+Login Button
+Google Login
+Apple Login
+5. Home Dashboard
+Purpose
+
+Provides quick access to all major services.
+
+Components
+
+Greeting Section
+
+Displays:
+
+User's name
+Welcome message
+
+Services
+
+Schedule Pickup
+Pickup History
+Notifications
+Recycling Guide
+
+Environmental Tips
+
+Displays recycling and environmental awareness cards.
+
+Nearby Recycling Locations
+
+Shows available recycling locations with images.
+
+Bottom Navigation
+
+Home
+Track
+Support
+Profile
+6. Recycling Guide
+Purpose
+
+Educates users about recyclable materials.
+
+Categories
+Plastic
+Glass
+Metal
+Paper
+Benefits
+
+Improves environmental awareness.
+
+7. Schedule Pickup Screen
+Purpose
+
+Allows users to request waste collection.
+
+Input Fields
+Waste Type
+Pickup Date
+Pickup Time
+Pickup Address
+Additional Notes
+Button
+
+Confirm Pickup
+
+8. Pickup Confirmation Screen
+Purpose
+
+Displays pickup request details before submission.
+
+Information Displayed
+Pickup Date
+Pickup Time
+Waste Type
+Address
+Button
+
+View Pickup
+
+9. Pickup Success Screen
+Purpose
+
+Confirms successful scheduling.
+
+Components
+Success Icon
+Confirmation Message
+Pickup Details
+View Pickup Button
+Back to Home Button
+10. Payment Screen
+Purpose
+
+Allows users to pay collection fees.
+
+Information
+Amount
+Payment Method
+Supported Payment Methods
+Mobile Money
+Debit/Credit Card
+Cash on Pickup
+Button
+
+Pay Now
+
+11. Payment Success Screen
+Purpose
+
+Confirms successful payment.
+
+Information
+Payment Status
+Transaction ID
+Date
+Amount
+Payment Method
+Buttons
+Download Receipt
+Back to Home
+12. Notifications Screen
+Purpose
+
+Keeps users informed about system updates.
+
+Notification Types
+Pickup Scheduled
+Collector Assigned
+Pickup Completed
+Payment Received
+13. Help Center
+Purpose
+
+Provides customer support.
+
+Features
+Search Bar
+Frequently Asked Questions
+Contact Support Button
+14. Profile Screen
+Purpose
+
+Allows users to manage personal information.
+
+Profile Options
+Edit Profile
+Addresses
+Payment Methods
+Settings
+Notifications
+Help Center
+Logout
+15. Edit Profile Screen
+Editable Fields
+Name
+Email
+Phone Number
+Button
+
+Save Changes
+
+16. Pickup History
+Purpose
+
+Displays all previous pickup requests.
+
+Information Displayed
+Pickup Date
+Waste Type
+Status
+Status Indicators
+Completed (Green)
+Cancelled (Red)
+Scheduled (Yellow)
+17. Settings Screen
+Available Settings
+Appearance
+Language
+Log Out
+Delete Account
+18. Appearance Settings
+Options
+Light Theme
+Dark Theme
+System Default
+19. Language Settings
+Available Languages
+English
+Twi
+20. Track Screen
+Purpose
+
+Allows users to monitor their waste collection.
+
+Information
+Collector Location
+Pickup Status
+Estimated Arrival Time
+21. Bottom Navigation
+
+The application uses a persistent bottom navigation bar.
+
+Navigation Items
+Icon	Screen
+Home	Dashboard
+Track	Pickup Tracking
+Support	Help Center
+Profile	User Profile
+Color Palette
+Color	Purpose
+Forest Green	Primary Theme
+White	Background
+Light Gray	Input Fields
+Dark Gray	Text
+Black	Headings
+Red	Errors
+Green	Success Messages
+Typography
+Element	Font Style
+Headings	Bold
+Body Text	Regular
+Buttons	Medium
+Labels	Regular
+Icons Used
+User Profile
+Waste Bin
+Truck
+Recycling
+Payment
+Notification
+Settings
+Help
+Calendar
+Clock
+Location
+Phone
+Home
+User Flow
+Splash Screen
+      ↓
+Welcome Screen
+      ↓
+Login / Sign Up
+      ↓
+Home Dashboard
+      ↓
+Choose Service
+      ↓
+Schedule Pickup
+      ↓
+Confirm Pickup
+      ↓
+Pickup Scheduled
+      ↓
+Payment
+      ↓
+Payment Success
+      ↓
+Track Pickup
+      ↓
+Pickup Completed
+Functional Modules
+Module	Description
+Authentication	Login and Registration
+User Profile	Manage user information
+Pickup Scheduling	Book waste collection services
+Pickup Tracking	Monitor collection progress
+Payments	Mobile Money, Card, Cash
+Notifications	Real-time updates
+Recycling Guide	Educational content
+Help Center	Customer support
+Settings	Personalization and account management
+Design Principles Used
+Simple and intuitive navigation
+Consistent green branding for environmental identity
+Minimalist interface to reduce user confusion
+Clear call-to-action buttons
+Readable typography with sufficient spacing
+Consistent iconography throughout the application
+Responsive layouts suitable for various mobile screen sizes
+Immediate feedback for actions such as scheduling and payments
+Accessibility through clear contrast and straightforward interactions
+
+This documentation provides a comprehensive overview of the application's interface and functionality, making it suitable for inclusion in a software requirements specification (SRS), system design document, or final-year project report.
